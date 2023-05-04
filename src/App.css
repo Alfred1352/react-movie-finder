@@ -1,6 +1,7 @@
 body {
   background: #141414;
   color: white;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .movie-app > .row {
@@ -8,18 +9,23 @@ body {
   flex-wrap: nowrap;
 }
 
+.movie-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .image-container {
   position: relative;
   transition: transform 0.2s;
+  margin: 10px;
+  height: 400px;
+  overflow: hidden;
 }
 
 .image-container:hover {
   cursor: pointer;
   transform: scale(1.1);
-}
-
-.image-container:hover .overlay {
-  opacity: 1;
 }
 
 .overlay {
@@ -32,4 +38,67 @@ body {
   font-size: 20px;
   padding: 20px;
   text-align: center;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+
+.movie-info {
+  display: inline-block;
+  margin-top: 10px;
+  max-width: 50%;
+}
+
+.movie-info h3 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.movie-info p {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.search-form {
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #e50914;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover {
+  background-color: #d30813;
+}
+
+.favorite-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: #dcdcdc;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.favorite-btn:hover {
+  color: white;
 }

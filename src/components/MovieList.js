@@ -1,22 +1,23 @@
-import React from 'react'
+import React from 'react';
+import Movie from './Movie';
 
-const MovieList = (props) => {
-  const FavoriteComponent = props.favoriteComponent;
+const MovieList = ({ movies, handleFavoritesClick, favoriteComponent }) => {
+  const FavoriteComponent = favoriteComponent;
   return (
-		<>
-			{props.movies.map((movie, index) => (
-				<div className='image-container d-flex justify-content-start m-3'>
-					<img src={movie.Poster} alt='movie'></img>
-					<div
-						onClick={() => props.handleFavoritesClick(movie)}
-						className='overlay d-flex align-items-center justify-content-center'
-					>
-						<FavoriteComponent />
-					</div>
-				</div>
-			))}
-		</>
-	);
+    <>
+      {movies.map((movie, index) => (
+        <div key={index}>
+          <Movie movie={movie} />
+          <div
+            onClick={() => handleFavoritesClick(movie)}
+            className='overlay d-flex align-items-center justify-content-center'
+          >
+            <FavoriteComponent />
+          </div>
+        </div>
+      ))}
+    </>
+  );
 };
 
-export default MovieList
+export default MovieList;
